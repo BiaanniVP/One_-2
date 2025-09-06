@@ -11,7 +11,8 @@ function asignarTextoElemento(elemento,texto){
   return;//buena practica 
 }
 function verificarIntento (){
-  alert (´Click desde el boton');
+  let numeroDe Usuario = document.querySelector('input');
+  return;
 }//funcion
 
 function generarNumeroSecreto(){
@@ -22,3 +23,4 @@ function generarNumeroSecreto(){
 //Puedo llamar la funcion desde el codigo js SOLO en eventos 
 asignarTextoElemento( 'h1','Juego del número secreto');
 asignarTextoElemento( 'p','Indica un número del 1 al 10');
+
