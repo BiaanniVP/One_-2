@@ -4,3 +4,5 @@ titulo.innerHTLM='Juego del número secreto';
 
 let parrafo=document.querySelector('p');
 parrafo.innerHTLM = 'Indica un númerod el 1 al 10";
+
+//interactuar con un boton
