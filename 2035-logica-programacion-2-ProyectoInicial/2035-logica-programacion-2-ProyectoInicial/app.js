@@ -1,5 +1,5 @@
-let numeroSecreto = generarNumeroSecreto; 
-let intentos = 1;
+let numeroSecreto = 0; //Condiciones Iniciales asigna el número
+let intentos = 0;
 /* para ver si esta funcionando
 console.log(numeroSecreto); */
 
@@ -16,7 +16,7 @@ function generarNumeroSecreto(){
   return numeroSecreto; 
 }//funcion
 
-function verificarIntento (){
+function verificarIntento(){
   let numeroDeUsuario = document.querySelector('input');
 
   if(numeroDeUsuario === numeroSecreto){
@@ -35,15 +35,29 @@ function verificarIntento (){
   return;
 }//funcion
 
-function limpiarCaja{
-   document.querySelector ('#valorUsuario').value = ''; //id
+function limpiarCaja(){
+   document.querySelector('#valorUsuario').value = ''; //id
 }//funcion
 
+function condicionesIniciales(){
+  //Puedo llamar la funcion desde el codigo js SOLO en eventos 
+  asignarTextoElemento( 'h1','Juego del número secreto');
+  asignarTextoElemento( 'p','Indica un número del 1 al 20');
+  numeroSecreto = generarNumeroSecreto();
+  intentos = 1;
+}//f
+    
+function reiniciarJuego(){
+  //limpiar la caja
+  function limpiarCaja();
+  //Condiones iniciales
+  function condicionesIniciales();
+  //colocar atributo
+   document.querySelector('#reiniciar').setAttribute('disabled', true);
+}//f
 
+condicionesIniciales();
 
-//Puedo llamar la funcion desde el codigo js SOLO en eventos 
-asignarTextoElemento( 'h1','Juego del número secreto');
-asignarTextoElemento( 'p','Indica un número del 1 al 10');
 
 
 
