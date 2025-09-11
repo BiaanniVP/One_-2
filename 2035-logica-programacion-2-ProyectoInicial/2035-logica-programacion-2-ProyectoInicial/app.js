@@ -20,7 +20,8 @@ function verificarIntento (){
   let numeroDeUsuario = document.querySelector('input');
 
   if(numeroDeUsuario === numeroSecreto){
-    asignarTextoElemento('p', `Acertaste el número en ${intentos} ${(intentos ===1) ? 'vez' : 'veces?'}`)
+    asignarTextoElemento('p', `Acertaste el número en ${intentos} ${(intentos ===1) ? 'vez' : 'veces?'}`);
+    document.getElementById ('reiniciar').removeAttribute('disabled');
   } else {
     //el usuario no acertó
     if (numeroDeUsuario > numeroSecreto) {
@@ -43,6 +44,7 @@ function limpiarCaja{
 //Puedo llamar la funcion desde el codigo js SOLO en eventos 
 asignarTextoElemento( 'h1','Juego del número secreto');
 asignarTextoElemento( 'p','Indica un número del 1 al 10');
+
 
 
 
