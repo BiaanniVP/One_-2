@@ -1,5 +1,8 @@
 let numeroSecreto = 0; //Condiciones Iniciales asigna el número
 let intentos = 0;
+let listaSorteados = [];
+let numeroMaximo =20;
+
 /* para ver si esta funcionando
 console.log(numeroSecreto); */
 
@@ -12,14 +15,28 @@ function asignarTextoElemento(elemento,texto){
 }//funcion
 
 function generarNumeroSecreto(){
-  let numeroSecreto =Math.floor ( Math.ramdom()*20)+1;
+  let numeroGenerado =Math.floor ( Math.ramdom()*numeroMaximo)+1;
+  //Si ya se sortearon todos los números
+  if(listaSorteados.length ==numeroMaximo{
+    asignarTextoElemento('p', 'Ya se sortearon todos los números posibles');
+  }else {
+    //Si el número generado está en la lista 
+    //includes devuelve booleano
+    if(listaSorteados.includes(numeroGenerado){
+    //recursividad, la función se llama a sí misma
+      return generarNumeroSecreto();
+      } else{
+      listaSorteados.push(numeroGenerado);//guarda en lista
+      return numeroGenerado;
+    }
+  }if 
   return numeroSecreto; 
 }//funcion
 
 function verificarIntento(){
   let numeroDeUsuario = document.querySelector('input');
 
-  if(numeroDeUsuario === numeroSecreto){
+  if(numeroDeUsuario == numeroSecreto){
     asignarTextoElemento('p', `Acertaste el número en ${intentos} ${(intentos ===1) ? 'vez' : 'veces?'}`);
     document.getElementById ('reiniciar').removeAttribute('disabled');
   } else {
@@ -42,7 +59,7 @@ function limpiarCaja(){
 function condicionesIniciales(){
   //Puedo llamar la funcion desde el codigo js SOLO en eventos 
   asignarTextoElemento( 'h1','Juego del número secreto');
-  asignarTextoElemento( 'p','Indica un número del 1 al 20');
+  asignarTextoElemento( 'p',`Indica un número del 1 al ${numeroMaximo} `);
   numeroSecreto = generarNumeroSecreto();
   intentos = 1;
 }//f
@@ -57,6 +74,7 @@ function reiniciarJuego(){
 }//f
 
 condicionesIniciales();
+
 
 
 
